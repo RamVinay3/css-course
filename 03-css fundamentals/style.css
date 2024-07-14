@@ -1,0 +1,244 @@
+/* 
+it selects all elements in the html and it will apply styling to everything and can be over-ridden easily
+good to define intial value for every element so we can do our actual customisation
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/* body {
+  font-style: italic;
+  /* good for applying inheritance */
+/* }  */
+/* applying common styles to list of  selectors */
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: rgb(69, 69, 69);
+}
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+/* The css file consist of multiple css rules and below is one perfect rule of css */
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+h2 {
+  font-size: 45;
+  margin-bottom: 30px;
+}
+h3 {
+  font-size: 30;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+p {
+  font-size: 22px;
+  line-height: 1.5; /* add space between lines*/
+  margin-bottom: 15px;
+}
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+li:last-child {
+  margin-bottom: 0;
+}
+article {
+  margin-bottom: 60px;
+}
+/* The below will select all paragraph elements where  footer is parent for <p>, 
+also known as descendant selector */
+/* footer p {
+  font-size: 16px;
+} */
+
+/* it is not a better practice to use descedant selectors  if they become nested it will be more complex
+that is why concept of id and class came here.
+*/
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+#copyright {
+  font-size: 16px;
+}
+
+/* two words always separated by - in css (rule) and class can be used many times unlike id */
+.related-author {
+  font-style: italic;
+  font-size: 18px;
+  font-weight: bold;
+}
+#related-posts {
+  list-style: none;
+}
+/* In real world , we always use classes, never used id's  */
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 50px;
+  height: 80px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0 50px 20px;
+  width: 500px;
+}
+/* we can add to the entire page by styling body element  */
+body {
+  position: relative;
+  /* styling */
+}
+
+/* put all code in one element 
+have some width to that element then give left,right margin as auto 
+
+then browser will take equal margin on both side as much as possible and center the page automatically*/
+.container {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-img {
+  width: 100%; /* it takes 100% of parent element width*/
+  height: auto;
+}
+/* pseduo classes are defined by using column */
+li:first-child {
+  font-weight: bold;
+}
+li:last-child {
+  font-style: italic;
+}
+/* for below one we may mention child number or the keywords like odd ,even */
+/* this property is quite helpful when we are styling table having different background colors  */
+li:nth-child(2) {
+  color: red;
+}
+/* The below code will be only applicable only when article having p as first direct child
+order is more important , it can't be present after some element
+*/
+article p:first-child {
+  color: yellowgreen;
+}
+article p:last-child {
+  color: yellowgreen;
+}
+/* pseudo classes only works when we have same element inside a class or selector otherwise if it is mix useless. */
+
+/* order for links must be same*/
+a:link {
+  /* only targets anchor with href*/
+  color: #1098ad;
+  text-decoration: none;
+}
+a:visited {
+  color: #777;
+}
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline dotted orangered;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+/* Resolving conflict */
+#copyright {
+  color: red;
+}
+.copyright {
+  color: blue;
+}
+.text {
+  color: yellow;
+}
+footer p {
+  /* color: green !important; this makes letters green */
+  color: green;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+nav a:link {
+  /* now margin top also applies by adding below line */
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+nav a:link:last-child {
+  margin-right: 0px;
+}
+
+.btn {
+  padding: 5px;
+  font-size: 23px;
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}
+/*pseudo elements not classes*/
+h1::first-letter {
+  font-style: normal;
+  margin-right: 10px;
+}
+
+p::first-line {
+  color: green;
+}
+
+/* adjacent or sibling selector */
+h3 + p::first-line {
+  color: red;
+}
+
+h2 {
+  position: relative;
+}
+/* most used and important pseudo selector */
+/* by default any pseudo element is a inline element */
+.header2::after {
+  content: "top";
+  background-color: yellow;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  position: absolute;
+  top: -25px;
+  color: black;
+  right: -15px;
+}
+/* it can be element tag or class anything is fine. */
+/* there is before also which is comes first and after will come last */
