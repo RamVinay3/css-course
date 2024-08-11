@@ -1,0 +1,225 @@
+/* 
+-- TYPOGRAPHY SYSTEM
+
+-- FONT WIEGHTS
+    default: 400
+    Medium: 500
+    Semi Bold: 600
+    Bold : 700
+
+-- LINE HEIGHTS
+defaults: 1
+
+
+-- SPACING SYSTEM(in px)
+
+
+
+-- COLORS
+
+Primary:#e67e22
+Tints:#fdf2e9
+Shades:#cf711f
+Accents: 
+Greys: #555,
+
+-- SHADOWS
+
+-- BORDER RADUIS
+default : 9px
+
+-- WHITE SPACE
+
+
+
+
+*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    /* font-size: 10px; 
+    10/16=0.625 *100= 62.5 
+    This way when user changes browser setting of font size everything increase if it
+    is present in percentages.
+    */
+    font-size: 62.5%;
+
+}
+body{
+    font-family: "Rubik",sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color:#555;
+}
+/* ************************ */
+/* HEADER Components */
+/* ************************* */
+.header{
+    display: flex;
+    align-items: center;
+    /* we want header to be sticky so instead of 
+    giving padding we defined height directly
+    */
+    height: 9.6rem;
+    background-color:#fdf2e9 ;
+    padding: 0 4.8rem;
+    }
+    .logo{
+        height: 2.2rem;
+    }
+    .main-nav{
+        margin-left: auto;
+    }
+    
+/* ************************ */
+/* HERO Components */
+/* ************************* */
+.section-hero{
+    background-color:#fdf2e9 ;
+    padding: 4.8rem 0 9.6rem 0 ;
+}
+.hero{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 130rem;
+    margin: 0 auto ;
+    padding: 0 3.2rem;
+    align-items: center;
+    gap: 9.6rem;
+}
+.hero-img{
+    width: 100%;
+}
+
+.hero-description{
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 4.8rem;
+
+}
+
+
+
+
+
+.delivered-meals{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 8rem;
+}
+.delivered-imgs{
+    display: flex;
+    /* gap: -2.5rem;negative gap won't work */
+}
+.delivered-imgs img{
+    height: 4.8rem;
+    border: 3px solid #fdf2e9;
+    border-radius: 10rem;
+    margin-right: -1.6rem;/*it will overlap images one over another*/
+}
+.delivered-imgs img:last-child{
+   
+    margin-right: 0;
+}
+.delivered-meals span{
+    color: #cf711f;
+}
+.delivered-text{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+/* ************************ */
+/* FEATURED IN Components */
+/* ************************* */
+
+.section-featured{
+    padding: 4.8rem 0 3.2rem 0;
+}
+.heading-featured{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.75;
+    font-weight: 500;
+    text-align: center ;
+    margin-bottom: 2.4rem;
+    color: #999;
+}
+.logos{
+    display: flex;
+    justify-content: space-around;
+}
+.logos img{
+    height: 3.2rem;
+    /* used to manipulate images  */
+    /* we made it to grey */
+    filter: brightness(0);
+    opacity: 50%;
+}
+/* ************************ */
+/* HOW IT WORKS Components */
+/* ************************* */
+.section-how{
+    padding: 9.6rem 0;
+    
+}
+
+.step-img{
+    width: 35%;
+    /* z-index: 1; */
+}
+
+.step-number{
+    font-size: 8.6rem;
+    font-weight: 600;
+     color: #ddd;
+     margin-bottom: 1.2rem;
+}
+.step-description{
+    font-size: 1.8rem;
+    line-height: 1.8;
+   
+}
+.step-img-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+.step-img-box::after,.step-img-box::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%) ;
+    border-radius: 50%;
+}
+.step-img-box::before{
+   
+    width: 60%;
+    /* height: 60%; */
+    padding-bottom: 60%;/* 60% of parents width to form a square*/
+    background-color: #fdf2e9;
+   
+    z-index:-100 ;/*elements having higher z-index will appear top of another element having lower z-index*/
+
+}
+.step-img-box::after{
+   
+    width: 45%;
+    /* height: 60%; */
+    padding-bottom: 45%;/* 60% of parents width to form a square*/
+    background-color: #fae5d3;
+   
+    z-index:-1 ;/*elements having higher z-index will appear top of another element having lower z-index*/
+
+}
+
+
