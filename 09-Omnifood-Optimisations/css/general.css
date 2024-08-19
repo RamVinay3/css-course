@@ -1,0 +1,194 @@
+
+/* ************************ */
+/* General REUSABLE Components */
+/* ************************* */
+/* how element should show up when got focused */
+*:focus{
+outline: none;
+/* outline: 4px dotted #e67e22;
+outline-offset: 8px;  */
+box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+.heading-primary,.heading-secondary{
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
+
+}
+.heading-primary{
+    font-size: 5.2rem;
+    line-height: 1.0;
+    margin-bottom: 3.2rem;
+}
+.margin-right-sm{
+    /* helper class, wanna apply this no matter what */
+    margin-right: 1.6rem !important;
+}
+.margin-bottom-md{
+    /* helper class, wanna apply this no matter what */
+    margin-bottom: 4.8rem !important;
+}
+.center-text{
+    text-align: center;
+}
+
+
+.btn--form{
+    background-color: #452601;
+    color: #fae5d3;
+    align-self: end;
+    padding: 1.2rem;
+}
+
+.btn,
+.btn:link,.btn:visited{
+    display: inline-block;
+    font-size: 2rem;
+    
+    padding: 1.6rem 3.2rem;
+    border-radius: 0.9rem;
+    text-decoration: none;
+    font-weight: 600;
+    /* only necessary for btn */
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+
+/*  we always put transition on original state */
+    transition: all 0.3s ;
+    
+}
+.btn--full:visited,.btn--full:link{
+    
+    background-color: #e67e22;
+    color: white;
+    
+}
+.btn--full:hover,.btn--full:active{
+    
+    background-color: #cf711f;
+    /* background-color: red; */
+}
+.btn--outline:link,.btn--outline:visited{
+    background-color: #fff;
+    color: #555;
+
+}
+.btn--form:hover{
+    background-color: white;
+    color: #555;
+}
+.btn--outline:hover,.btn--outline:active{
+    background-color: #fdf2e9;
+    /* border: 3px solid black;
+    for small things we add px and for big rem
+    if we use this our border will come out , but it 
+    should not be like that
+    */
+
+    /* Trick to add border inside */
+    box-shadow: inset  0 0 0 3px #fff;
+    
+
+} 
+.container{
+    /* 1140px is also standard */
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 3.2rem;
+}
+.grid{
+    display: grid;
+    row-gap: 9.6rem;
+    column-gap: 6.4rem;
+}
+/* .grid:last-child{
+    margin-bottom: 0;
+} */
+.grid:not(:last-child){
+margin-bottom: 9.6rem;
+}
+.grid--2-col{
+    grid-template-columns: repeat(2,1fr);
+}
+.grid--3-col{
+    grid-template-columns: repeat(3,1fr);
+}
+.grid--4-col{
+    grid-template-columns: repeat(4,1fr);
+}
+.grid--5-col{
+    grid-template-columns: repeat(5,1fr);
+}
+.grid--center{
+    align-items: center;
+}
+.heading-secondary{
+font-size: 4.4rem;
+line-height: 1.2;
+margin-bottom: 9.6rem;
+}
+.subheading{
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #cf711f;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.75px;
+
+}
+
+
+
+.heading-territiary{
+    font-size: 3.6rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+}
+.grid--center{
+   
+    align-items: center;
+    justify-items: center;
+}
+
+/* we should not add pseudo elements to 
+image elements.
+*/
+
+/* only href elements will get applied link,visited,active, */
+.link:link,
+.link:visited{
+color: #e67e22;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    transition: all 0.3;
+    display: inline-block;
+    padding: 2px;
+}
+.link:active,
+.link:hover{
+color: #cf711f;
+/*This will mess up the spacing when getting dissapeared*/
+/* border-bottom: none; */
+border-bottom: 1px solid transparent;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+.list-item{
+    font-size:1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.list-icon{
+    width: 3rem;
+    height: 3rem;
+    color: #e67e22;
+}

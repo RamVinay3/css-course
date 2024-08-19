@@ -1,0 +1,265 @@
+/* rem and em do not depend on html font-size in media queries
+instead  we assume 1rem=1em=16px
+rem--> root fontsize, em-->current fontsize
+
+we should not use  rem while mentioning max-width  in media queries as they will be  having some bugs in some browsers
+
+*/
+
+/* 
+we should consider when design is breaking and 
+mobile sizes also based on that we have to write media queries
+
+*/
+
+/* ************************ */
+/* BELOW 1344 PX(smaller desktops) */
+/* ************************* */
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    padding: 1.6rem;
+  }
+}
+
+/* ************************ */
+/* BELOW 1200px(Landscape tablets) */
+/* ************************* */
+@media (max-width: 75em) {
+  html {
+    /* ((9px/16px) * 100) */
+    font-size: 56.2%;
+  }
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+  .heading-territiary {
+    font-size: 2.4rem;
+    color: #333;
+  }
+  .grid {
+    row-gap: 6.4rem;
+    column-gap: 4.8rem;
+  }
+  .header {
+    padding: 0 3.2rem;
+  }
+  .hero {
+    gap: 4.8rem;
+  }
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+  .testomonials-container {
+    padding: 9.6rem 3.2rem;
+  }
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+}
+
+/* ************************ */
+/* BELOW 940px( TABLETS) */
+/* ************************* */
+
+@media (max-width: 60em) {
+  /* 8/16 * 100 px */
+  html {
+    font-size: 50%;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4;
+  }
+
+  .hero-img {
+    width: 50%;
+  }
+  .hero-textbox,
+  .hero-imgbox {
+    text-align: center;
+  }
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+  .logos img {
+    height: 2.4rem;
+  }
+  .step-number {
+    font-size: 7.4rem;
+  }
+  .section-testomonials {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+  .cta-form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .btn-mobile-nav {
+    display: block;
+  }
+  .main-nav {
+    /* it will take viewport as it's size */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 
+        ease-in : starts slow but move fast
+        ease-out : starts fast but slow down 
+        try other options also
+        */
+    transition: all 0.5s ease-in;
+    /* transition: all 0.5s ease-in; */
+    transform: translateY(-100%);
+    /* it's better to use transform instead of top
+        left,right or anything , for transitions ,transform is good */
+
+    /* Hides the element visually */
+    opacity: 0;
+
+    /* Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* Make it hidden */
+    visibility: hidden;
+  }
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+}
+/* ************************ */
+/* BELOW 704px( smaller TABLETS) */
+/* ************************* */
+@media (max-width: 47em) {
+  .grid--4-col,
+  .grid--3-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .diets {
+    justify-self: center;
+    grid-column: 1/-1;
+  }
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+  .pricing-plan {
+    width: 100%;
+  }
+  .grid--footer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+    align-self: center;
+  }
+  .logo-col,
+  .add-col {
+    grid-column: span 3;
+  }
+}
+/* ************************ */
+/* BELOW 704px( for phones) */
+/* ************************* */
+@media (max-width: 34em) {
+  .grid--4-col,
+  .grid--3-col,
+  .grid--2-col,
+  .testomonials {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .section-hero {
+    padding: 3.2rem 0 6.4rem 0;
+  }
+
+  .hero {
+    padding: 0 3.2rem;
+  }
+  .logos {
+    flex-wrap: wrap;
+    gap: 2.4rem;
+  }
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+  .hero-img {
+    width: 100%;
+  }
+  .logos img{
+    height: 1.2rem;
+  }
+  /*at which node it is present in parent*/
+  .step-img-box:nth-child(2){
+    grid-row: 1;
+  }
+  .step-img-box:last-child{
+    grid-row: 5;
+  }
+  .step-img-box{
+    transform: translate(2.4rem);
+  }
+  .gallery{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.2rem;
+  }
+  .cta{
+    grid-template-columns: 1fr;
+  }
+  .cta-img-box{
+    height: 32rem;
+    grid-row: 1;
+  }
+  .cta-text-box{
+    padding: 3.2rem;
+  }
+}
+/* SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+ */
